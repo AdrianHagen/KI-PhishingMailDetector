@@ -1,0 +1,2 @@
+models/phishing_email_classifier.h5
+data/embeddings.csv
