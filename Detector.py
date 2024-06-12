@@ -82,12 +82,12 @@ def predict_phishing(subject: str, content: str):
 
 
 # Creating sample mails on my own to test and demonstrate the model
-mails = [
-    (
-        "You won!",
-        "You won the lottery! Please send us your bank account details to claim your prize.",
-    ),
-]
+# mails = [
+#     (
+#         "You won!",
+#         "You won the lottery! Please send us your bank account details to claim your prize.",
+#     ),
+# ]
 
-for mail in mails:
-    print(mail, predict_phishing(mail[0], mail[1]))
+# for mail in mails:
+#     print(mail, predict_phishing(mail[0], mail[1]))
