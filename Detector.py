@@ -59,14 +59,13 @@ def get_embedding(text: str):
     return embedding_str
 
 
-def predict_phishing(subject: str, content: str):
-    model_input = subject + " " + content
-
+def predict_phishing(content: str):
+    
     # Load the saved model for phishing email classification
     model = load_model("models/phishing_email_classifier.h5")
 
     # Encode the preprocessed email text to get its embedding
-    email_embedding = get_embedding(model_input)
+    email_embedding = get_embedding(content)
 
     # Process the embedding
     embedding_list = [float(i) for i in email_embedding.strip("[]").split(", ")]

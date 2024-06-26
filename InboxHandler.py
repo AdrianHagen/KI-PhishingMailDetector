@@ -14,10 +14,10 @@ def save_emails_to_files():
     messages = gmail.get_unread_inbox(labels=[checking_label])
 
     for message in messages:
-        check_phishing(message.subject, message.plain, message)
+        check_phishing(message.plain, message)
 
-def check_phishing(subject, plain, message):
-  is_phishing = predict_phishing(subject, plain)
+def check_phishing(plain, message):
+  is_phishing = predict_phishing(plain)
   print(is_phishing)
   if (is_phishing):
     message.modify_labels(to_add=phishing_label, to_remove=checking_label)
